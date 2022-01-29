@@ -1,0 +1,61 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(230, 230, 230);
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(240, 240, 240);
+    color: #262626;
+}
+
+.navbar {
+    transition: 0.5s;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(57, 66, 148);
+}
+
+h4 {
+    font-weight: normal;
+}
+
+footer .btn {
+    background-color: rgb(230, 230, 230);
+}
+
+footer i {
+    color:#262626;
+    font-size: 1.3rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .contact {
+    color: rgb(230, 230, 230);
+    font-size: 1.2rem;
+    white-space: nowrap
+}
+
+a {
+    cursor: pointer;
+}
+
+footer .btn:hover {
+    background-color: rgb(57, 66, 148);
+    border-color: rgb(230, 230, 230);
+}
+
+footer .btn:hover i {
+    color: rgb(230, 230, 230);
+}
+
+footer .contact i {
+    color: rgb(230, 230, 230);
+    font-size: 1rem;
+    padding-right: 0.5rem;
+}

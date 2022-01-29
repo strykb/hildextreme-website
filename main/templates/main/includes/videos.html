@@ -1,0 +1,27 @@
+<div class="row d-flex justify-content-around flex-wrap">
+    {% for video in videos %}
+        <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                <img src="{{ video.thumbnail.url }}" class="w-100 h-100"/>
+                <a href="#!" data-mdb-toggle="modal" data-mdb-target="#exampleModal{{ video.id }}">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                </a>
+            </div>
+            <p class="text-dark video-title h5 fw-normal">{{video.title}}</p>
+        </div>
+        <div class="modal fade" id="exampleModal{{ video.id }}" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true" >
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content p-2 p-md-4">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/{{ video.iframe }}" title="YouTube video" allowfullscreen ></iframe>
+                    </div>
+                    <div class="text-center py-3">
+                        <h3 class="text-dark h4">{{ video.title }}</h3>
+                        <p class="text-dark">{{ video.description }}</p>
+                        <button class="btn btn-outline-dark btn-lg" data-mdb-dismiss="modal">Zamknij</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

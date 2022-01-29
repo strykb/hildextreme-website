@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Kontakt
+{% endblock %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static "main/css/contact.css" %}">
+{% endblock %}
+{% block content %}
+<section id="contact" class="px-2 py-4 py-md-2">
+    <div class="container">
+        <h2>Zapraszamy do kontaktu</h2>
+        <div class="d-flex justify-content-around flex-wrap align-items-center">
+            <div class="align-self-start pt-md-5">
+                <p>Z chęcią odpowiemy na wszelkie pytania.</p>
+                <p><a class="contact" href="mailto:pawelhildebrand@o2.pl"><i class="fas fa-envelope"></i>pawelhildebrand@op.pl</a></p>
+                <p><a class="contact" href="tel: +48737536863"><i class="fas fa-phone-alt"></i>737536863</a></p>
+                <p>Dane firmy:</p>
+                <ul>
+                    <li>Paweł Hildebrand Hildextreme</li>
+                    <li>NIP 9571130597</li>
+                    <li>REGON 388070362</li>
+                </ul>
+                <a class="btn btn-lg btn-floating m-1" href="https://www.facebook.com/Hildextreme-100494478791685/" role="button"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-lg btn-floating m-1" href="https://www.instagram.com/hildextreme/" role="button"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-lg btn-floating m-1" href="https://www.youtube.com/channel/UCmexD0M8D4g2QACX8De8DIA/featured" role="button"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="my-5">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {{ field.errors }}
+                    {% endfor %}
+                    <button type='submit' class="btn btn-outline-dark btn-md">Wyślij</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js_files %}
+<script src="{% static "main/js/contact.js" %}"></script>
+{% endblock %}

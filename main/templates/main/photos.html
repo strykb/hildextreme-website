@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Zdjęcia
+{% endblock %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static "main/css/photos.css" %}">
+{% endblock %}
+{% block content %}
+<section id="photos" class="photos px-2 py-4 py-md-2">
+    <div class="row text-center">
+        {% for photo in photos %}
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4 mb-md-2 photo-container">
+                <img src="{{ photo.photo.url }}" class="w-100" alt=""/>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+{% block js_files %}
+<script src="{% static "main/js/photos.js" %}"></script>
+{% endblock %}

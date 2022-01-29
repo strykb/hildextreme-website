@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Hildextreme
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "main/css/index.css" %}">
+{% endblock %}
+
+{% block content %}
+<header>
+	<div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+    	<ol class="carousel-indicators">
+			<li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+			<li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+			<li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
+      	</ol>
+      	<div class="carousel-inner">
+        	<div class="carousel-item active">
+          		<div class="mask" style="background-color: rgba(0, 0, 0, 0.2);">
+            		<div class="d-flex justify-content-center align-items-center h-100">
+              			<div class="text-white text-center">
+							<h1 class="mb-3">Hildextreme</h1>
+							<h5 class="mb-4">Zdjęcia i filmy reklamowe</h5>
+							<a id="header-btn" class="btn btn-outline-light btn-lg" href="#o-nas">Dowiedz się więcej</a>
+              			</div>
+            		</div>
+          		</div>
+        	</div>
+        	<div class="carousel-item">
+          		<div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+					<div class="d-flex justify-content-center align-items-center h-100">
+						<div class="text-white text-center">
+							<h1 class="mb-3">Hildextreme</h1>
+							<h5 class="mb-4">Zdjęcia i filmy reklamowe</h5>
+							<a id="header-btn" class="btn btn-outline-light btn-lg" href="#o-nas">Dowiedz się więcej</a>
+						</div>
+					</div>
+          		</div>
+        	</div>
+			<div class="carousel-item">
+				<div class="mask" style="background: rgba(0, 0, 0, 0.2);">
+					<div class="d-flex justify-content-center align-items-center h-100">
+						<div class="text-white text-center">
+							<h1 class="mb-3">Hildextreme</h1>
+							<h5 class="mb-4">Zdjęcia i filmy reklamowe</h5>
+							<a id="header-btn" class="btn btn-outline-light btn-lg" href="#o-nas">Dowiedz się więcej</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+      	<a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Poprzedni</span>
+      	</a>
+      	<a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Następny</span>
+      	</a>
+    </div>
+</header>
+<section id="o-nas" class="about">
+    <h2 class="text-center text-dark fw-bold mb-lg-3 h2">O nas</h2>
+    <p class="text-center text-dark mb-3 mx-auto h5 fw-normal">Hildextreme jest firmą specjalizującą się w realizacji wszelkiego rodzaju filmów i zdjęć reklamowych, promocyjnych oraz relacji z wydarzeń.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box py-4 p-2 p-lg-3">
+                    <div class="icon">
+                        <i class="fas fa-globe-europe"></i>
+                    </div>
+                    <h4 class="title">Lokalizacja</h4>
+                    <p class="description">Nasze usługi oferujemy na terenie Gdańska, województwa pomorskiego i okolic.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box py-4 p-2 p-lg-3">
+                    <div class="icon">
+                        <i class="fas fa-truck-monster"></i>
+                    </div>
+                    <h4 class="title">Dojazd</h4>
+                    <p class="description">Posiadamy sprzęt umożliwiający dojazd oraz nagrywanie w najcięższych warunkach zachowując przy tym najwyższą jakość obrazu i dźwięku.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box py-4 px-2 px-lg-3">
+                    <div class="icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h4 class="title">Najlepsza jakość</h4>
+                    <p class="description">W swojej pracy używamy profesjonalnego sprzętu, gwarantującego najwyższą jakość filmów i zdjęć.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box py-4 px-2 px-lg-3">
+                    <div class="icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4 class="title">Elastyczność</h4>
+                    <p class="description">Świadczymy usługi wysokiej jakości, do każdego klienta i zlecenia podchodzimy indywidualnie.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="latest-videos">
+    <h2 class="text-center text-dark fw-bold h2">Najnowsze filmy</h2>
+    {% include "main/includes/videos.html" %}
+    <a class="btn btn-outline-dark btn-lg latest-btn header-btn" href="{% url "videos" %}" role="button">Zobacz więcej</a>
+</section>
+{% endblock %}
+
+{% block js_files %}
+<script src="{% static "main/js/index.js" %}"></script>
+{% endblock %}

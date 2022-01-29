@@ -1,0 +1,5 @@
+{{ content }}
+
+Email: {{ email }}
+
+Numer telefonu: {{ phone }}

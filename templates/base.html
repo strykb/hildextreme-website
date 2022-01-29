@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="Hildextreme jest firmą specjalizującą się w realizacji wszelkiego rodzaju filmów i zdjęć reklamowych, promocyjnych oraz relacji z wydarzeń.">
+    <title>{% block title %}{%endblock%}</title>
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
+    <link rel="stylesheet" href="{% static "css/mdb.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/additional.css" %}" />
+    {% block css_files %}{% endblock %}
+</head>
+<body>
+    <nav id="main-navbar" class="navbar navbar-expand-md navbar-dark fixed-top {% if view.template_name != "main/index.html" %}bg-dark{% endif %}">
+        <div class="container">
+            <a class="navbar-brand" href="{% url "index" %}"><img src="{% static "img/logo.svg" %}" height="50" alt="Hildextreme"/></a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a id="nav-about" class="nav-link fs-5 px-3" href="{% url "index" %}#o-nas">O nas</a>
+                    <a class="nav-link fs-5 px-3" href="{% url "videos" %}">Filmy</a>
+                    <a class="nav-link fs-5 px-3" href="{% url "photos" %}">Zdjęcia</a>
+                    <a class="nav-link fs-5 px-3" href="{% url "contact" %}">Kontakt</a>
+                </div>
+            </div>
+        </div>
+        </nav>    
+    {% block content %}
+    {% endblock %}
+    <footer class="bg-dark text-center text-white">
+        <div class="container-sm p-2">
+            <div class="row d-flex align-items-center">
+                <div class="col-sm">
+                    <p><a class="contact" href="mailto:pawelhildebrand@o2.pl"><i class="fas fa-envelope"></i>pawelhildebrand@op.pl</a></p>
+                    <p><a class="contact" href="tel: +48737536863"><i class="fas fa-phone-alt"></i>737536863</a></p>
+                </div>
+                <div class="col-sm">
+                    <h4 class="h5 fw-normal">© Hildextreme 2021</h4>
+                </div>
+                <div class="col-sm">
+                    <a class="btn btn-lg btn-floating m-1" href="https://www.facebook.com/Hildextreme-100494478791685/" role="button"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-floating m-1" href="https://www.instagram.com/hildextreme/" role="button"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-floating m-1" href="https://www.youtube.com/channel/UCmexD0M8D4g2QACX8De8DIA/featured" role="button"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="{% static "js/mdb.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/additional.js" %}"></script>
+    <script src="https://kit.fontawesome.com/53c336a49a.js" crossorigin="anonymous"></script>
+    {% block js_files %}{% endblock %}
+</body>
+</html>

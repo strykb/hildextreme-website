@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Filmy
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "main/css/all_videos.css" %}">
+{% endblock %}
+
+{% block content %}
+<section id="videos" class="videos px-2 py-4 py-md-2">
+    <h2>Nasze Realizacje</h2>
+    {% include "main/includes/videos.html" %}
+</section>
+{% endblock %}
+
+{% block js_files %}
+<script src="{% static "main/js/all_videos.js" %}"></script>
+{% endblock %}
